@@ -1,0 +1,192 @@
+[33mcommit a129073ad455f6e75fd8f01d55e06dfa2aba2de3[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: b4ldorDev <A01773374@tec.mx>
+Date:   Tue Jan 7 12:27:30 2025 -0600
+
+    Clean repository and remove  node_modules
+
+[1mdiff --git a/.gitignore b/.gitignore[m
+[1mindex 5ef6a520..f0ddd928 100644[m
+[1m--- a/.gitignore[m
+[1m+++ b/.gitignore[m
+[36m@@ -1,14 +1,7 @@[m
+[31m-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.[m
+[31m-[m
+ # dependencies[m
+ /node_modules[m
+ /.pnp[m
+[31m-.pnp.*[m
+[31m-.yarn/*[m
+[31m-!.yarn/patches[m
+[31m-!.yarn/plugins[m
+[31m-!.yarn/releases[m
+[31m-!.yarn/versions[m
+[32m+[m[32m.pnp.js[m
+ [m
+ # testing[m
+ /coverage[m
+[36m@@ -28,14 +21,12 @@[m
+ npm-debug.log*[m
+ yarn-debug.log*[m
+ yarn-error.log*[m
+[31m-.pnpm-debug.log*[m
+ [m
+[31m-# env files (can opt-in for committing if needed)[m
+[31m-.env*[m
+[32m+[m[32m# local env files[m
+[32m+[m[32m.env*.local[m
+ [m
+ # vercel[m
+ .vercel[m
+[31m-[m
+[31m-# typescript[m
+[31m-*.tsbuildinfo[m
+[31m-next-env.d.ts[m
+[32m+[m[32m.next/[m
+[32m+[m[32mbuild/[m
+[32m+[m[32mbuild/[m
+
+[33mcommit 33584ff54d1605d3f4e153b3edba587e2156571f[m
+Author: Ileana T. <98206306+b4ldorDev@users.noreply.github.com>
+Date:   Mon Jan 6 20:55:35 2025 -0600
+
+    Add files via upload
+
+[1mdiff --git a/IMG_6899 (1).jpg b/IMG_6899 (1).jpg[m
+[1mnew file mode 100644[m
+[1mindex 00000000..0b2f015e[m
+Binary files /dev/null and b/IMG_6899 (1).jpg differ
+[1mdiff --git a/PHOTO-2024-10-23-11-24-38.jpg b/PHOTO-2024-10-23-11-24-38.jpg[m
+[1mnew file mode 100644[m
+[1mindex 00000000..69e7b2b1[m
+Binary files /dev/null and b/PHOTO-2024-10-23-11-24-38.jpg differ
+[1mdiff --git a/Screenshot_2024-09-04_at_11.55.47.png b/Screenshot_2024-09-04_at_11.55.47.png[m
+[1mnew file mode 100644[m
+[1mindex 00000000..4f606f83[m
+Binary files /dev/null and b/Screenshot_2024-09-04_at_11.55.47.png differ
+[1mdiff --git a/Untitled106_20240622140703.jpg b/Untitled106_20240622140703.jpg[m
+[1mnew file mode 100644[m
+[1mindex 00000000..04520b35[m
+Binary files /dev/null and b/Untitled106_20240622140703.jpg differ
+[1mdiff --git a/Untitled106_20241222173216.png b/Untitled106_20241222173216.png[m
+[1mnew file mode 100644[m
+[1mindex 00000000..50fe7231[m
+Binary files /dev/null and b/Untitled106_20241222173216.png differ
+[1mdiff --git a/Untitled106_20241222173233.png b/Untitled106_20241222173233.png[m
+[1mnew file mode 100644[m
+[1mindex 00000000..aae0f137[m
+Binary files /dev/null and b/Untitled106_20241222173233.png differ
+
+[33mcommit 5205aa9efef9b273e732b780db93796d912ecc19[m
+Author: b4ldorDev <A01773374@tec.mx>
+Date:   Sun Jan 5 09:32:48 2025 -0600
+
+    animaciones y links
+
+[1mdiff --git a/app/layout.tsx b/app/layout.tsx[m
+[1mindex cae1145c..4aede9ab 100644[m
+[1m--- a/app/layout.tsx[m
+[1m+++ b/app/layout.tsx[m
+[36m@@ -3,7 +3,7 @@[m [mimport { Urbanist } from "next/font/google";[m
+ [m
+ import "./globals.css";[m
+ import Navbar from "@/components/navbar";[m
+[31m-[m
+[32m+[m[32mimport Header from "@/components/header";[m
+ [m
+ const urbanist = Urbanist ({subsets: ["latin"]});[m
+ [m
+[36m@@ -21,6 +21,7 @@[m [mexport default function RootLayout({[m
+     <html lang="en">[m
+       <body className={urbanist.className}>[m
+         <Navbar/>[m
+[32m+[m[32m        <Header/>[m
+         {children}[m
+       </body>[m
+     </html>[m
+[1mdiff --git a/app/page.tsx b/app/page.tsx[m
+[1mindex a27ae1d6..8f269307 100644[m
+[1m--- a/app/page.tsx[m
+[1m+++ b/app/page.tsx[m
+[36m@@ -1,14 +1,16 @@[m
+ import './globals.css';[m
+[31m-import { CoverParticles } from '@/components/cover-particles';[m
+[32m+[m[32mimport { CoverParticles } from '@/components/cover-particles';[m[41m [m
+[32m+[m[32mimport  TransitionPage  from '@/components/transition-pages';[m
+ [m
+ export default function Home() {[m
+   return ([m
+[31m-    <main className="min-h-screen flex items-center justify-center"> [m
+[32m+[m[32m    <main>[m[41m [m
+[32m+[m[32m      <TransitionPage/>[m[41m [m
+       <div className="flex flex-col items-center gap-4"> [m
+[31m-        <p className="text-3xl font-bold animate-fade-in">Victor Manuel Canchola 🌱</p>[m
+[31m-        <p className="text-lg animate-slide-in">Introducción</p>[m
+[32m+[m[32m        <CoverParticles />[m[41m [m
+[32m+[m[32m      {/*  <p className="text-3xl font-bold animate-fade-in">Introducción </p>       */}[m[41m [m
+[32m+[m[32m      {/*  <p className="text-lg animate-slide-in">Productor musical y compositor originario de Querétaro. Especializado en la creación y producción de música para medios audiovisuales. Fundador de la banda "Juliette!", donde fusiona elementos del rock alternativo con influencias del rock japonés</p>*/}[m
+       </div>[m
+[31m-      <CoverParticles /> [m
+     </main>[m
+   );[m
+ }[m
+\ No newline at end of file[m
+[1mdiff --git a/components/header.tsx b/components/header.tsx[m
+[1mnew file mode 100644[m
+[1mindex 00000000..abfc274e[m
+[1m--- /dev/null[m
+[1m+++ b/components/header.tsx[m
+[36m@@ -0,0 +1,36 @@[m
+[32m+[m[32mimport Link from "next/link";[m
+[32m+[m[32mimport MotionTransition from "./transition-component";[m
+[32m+[m[32mimport { socialNetworks } from "@/data";[m
+[32m+[m
+[32m+[m[32mconst Header = () => {[m
+[32m+[m[32m    return ([m
+[32m+[m[32m        <MotionTransition position="bottom" className="absolute z-40 inline-block w-full top-5 md:top-10">[m
+[32m+[m[32m            <header className="flex justify-center items-center"> {/* Añadido flex y centrado */}[m
+[32m+[m[32m                <div className="container justify-between max-w-6xl mx-auto md:flex  items-center"> {/* Añadido centrado */}[m
+[32m+[m[32m                    <Link href="/">[m
+[32m+[m[32m                        <h1 className="my-3 text-4xl font-bold text-center md:text-left">[m
+[32m+[m[32m                            Victor Manuel Canchola[m
+[32m+[m[32m                            <span className="bg-secondary-100">[m
+[32m+[m[32m                                Músico🌱[m
+[32m+[m[32m                            </span>[m
+[32m+[m[32m                        </h1>[m
+[32m+[m[32m                    </Link>[m
+[32m+[m[32m                    <div className="flex items-center justify-center gap-7">[m
+[32m+[m[32m                        {socialNetworks.map(({logo, src, id}) =>([m
+[32m+[m[32m                            <Link key={id}[m
+[32m+[m[32m                                href={src}[m
+[32m+[m[32m                                target="_blank"[m
+[32m+[m[32m                                className="transition-all duration-300 hover:text-secondary"[m
+[32m+[m
+[32m+[m[32m                            >[m
+[32m+[m[32m                                {logo}[m
+[32m+[m[32m                            </Link>[m
+[32m+[m[32m                        ))}[m
+[32m+[m[32m                    </div>[m
+[32m+[m[32m                </div>[m
+[32m+[m[32m            </header>[m
+[32m+[m[32m        </MotionTransition>[m
+[32m+[m[32m    );[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32mexport default Header;[m
+\ No newline at end of file[m
+[1mdiff --git a/components/navbar.tsx b/components/navbar.tsx[m
+[1mindex 72f3086c..8d5b9400 100644[m
+[1m--- a/components/navbar.tsx[m
+[1m+++ b/components/navbar.tsx[m
+[36m@@ -2,22 +2,23 @@[m
+ import { itemsNavbar } from "@/data";[m
+ import Link from "next/link";[m
+ import{usePathname} from "next/navigation"; [m
+[32m+[m[32mimport MotionTransition from "./transition-component";[m
+ [m
+ const Navbar =() => {[m
+     const router = usePathname()[m
+     return([m
+[31m-            <div className="fixed z-40 flex flex-col items-center justify-center w-full mt-auto h-max bottom-10">[m
+[32m+[m[32m            <MotionTransition position="right" className="fixed z-40 flex flex-col items-center justify-center w-full mt-auto h-max bottom-10">[m
+             <nav>[m
+                 <div className="flex items-center justify-cente
