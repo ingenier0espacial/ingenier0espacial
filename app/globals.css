@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body{
+  color: #fff;
+  background: linear-gradient(-25.5deg, #8f8044, #fc8020);
+
+}
+
+main{
+  
+  height: 100vh;
+  height: 100dvh;
+}
+
+@layer utilities{
+  .text-balance{
+    text-wrap: balance;
+  } 
+}
