@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Disculpas para Victor</title>
+  <style>
+    body {
+      font-family: 'Courier New', monospace;
+      color: #7a7672;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+      background: #1e1e2f url('https://i.imgur.com/JQp1xpv.gif') repeat; /* Fondo lluvia pixel art */
+      background-size: cover;
+    }
+
+    .container {
+      position: relative;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 20px;
+      border-radius: 15px;
+    }
+
+    h1 {
+      color: #b6a6ca;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    .message {
+      background-color: rgba(182, 166, 202, 0.1);
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 600px;
+      margin: 0 auto 30px;
+      box-shadow: 0 0 10px rgba(182, 166, 202, 0.2);
+      border: 1px solid #d1ccc7;
+      backdrop-filter: blur(4px);
+    }
+
+    .button {
+      background-color: #c7b8d6;
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 1.2em;
+      cursor: pointer;
+      transition: all 0.3s;
+      margin: 10px;
+      font-family: 'Courier New', monospace;
+      opacity: 0.8;
+    }
+
+    .button:hover {
+      background-color: #b6a6ca;
+      transform: scale(1.03);
+      opacity: 1;
+    }
+
+    .acceptance {
+      font-size: 2em;
+      color: #a7cdc5;
+      margin-top: 20px;
+      opacity: 0;
+      transition: opacity 1s;
+    }
+
+    .visible {
+      opacity: 0.8;
+    }
+
+    .pixel-cat {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      width: 64px;
+      height: 64px;
+      background-image: url('https://i.imgur.com/19V55Gh.png'); /* Gato tricolor pixel-art */
+      background-size: cover;
+      image-rendering: pixelated;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Victor, Lo Siento Mucho</h1>
+    <div class="message">
+      <p>Lo de Isaac era mentira. Si quieres comprobarlo, puedo darte mi contraseña y acceso a mi WhatsApp Web, no tengo nada que ocultar. Lo inventé porque me sentí mal por cosas que mencionaste.</p>
+      <p>Me sentí mal cuando dijiste eso de que viviste una película, y por otras cosas también. Sentía que para ti no era suficiente. Al principio no fuiste específico, pero era obvio que trataba de tu ex. Por eso hablé lo del otro wey solo para ver si te ponías celoso, porque sentía demasiado por ti y no sabía cómo hacer para que fuera suficiente.</p>
+      <p>Trataba de llamar tu atención con tonterías, con dibujos, con la página web, siempre con cosas bonitas, porque pensaba que mi amor no bastaba. Después dejé de intentar. Cuando mencionabas que yo encontraría a alguien más me sentía mal y comencé a hacer lo mismo, luego dejé de intentar, no porque no te amara sino porque acepté que nunca sería suficiente.</p>
+      <p>Y cuando me siento mal, me enojo. Mucho. Y sé que tú no tienes la culpa, pero igual te hablé mal. Me respondiste seca ese día, y algo molesto, y lo entiendo, tenías que trabajar.</p>
+      <p>Sé perfectamente que no hay nada que pueda arreglar esto. No quiero que creas que todo fue falso. Yo sí te amé. Mucho. Demasiado.</p>
+    </div>
+
+    <div class="buttons">
+      <button class="button" id="perdonar">Te Perdono</button>
+      <button class="button" id="mensaje">Ver Mensaje Adicional</button>
+    </div>
+
+    <div class="acceptance hidden" id="acceptance">
+      Gracias por tu tiempo, Victor
+    </div>
+  </div>
+
+  <div class="pixel-cat"></div>
+
+  <script>
+    document.getElementById('perdonar').addEventListener('click', function () {
+      const acceptance = document.getElementById('acceptance');
+      acceptance.classList.remove('hidden');
+      setTimeout(() => {
+        acceptance.classList.add('visible');
+      }, 100);
+    });
+
+    document.getElementById('mensaje').addEventListener('click', function () {
+      alert("No quiero seguir lastimándote. Solo quiero verte, hablar en persona. Estoy dispuesta a pagarte el viaje de ida y vuelta, porque sé que para ti esto sería una pérdida de tiempo. No quiero obligarte, claro, no estás en deuda conmigo. Solo... no estoy bien. No lo digo de forma romántica, ni lo uso como excusa. No estoy orgullosa. Solo... tengo una forma fea y estúpida de reaccionar. Tú no mereces una relación así. Nadie la merece. Y aunque a veces haría cosas muy intensas por ti, todo eso también se desmorona rápido. No busco que regreses conmigo. Solo quería que supieras que sí te amé. Pero estoy mal. Y no sé cómo cambiar eso.");
+    });
+  </script>
+</body>
+</html>
